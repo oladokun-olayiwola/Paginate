@@ -1,8 +1,16 @@
-import React, { useState, useEffect } from 'react'
-import { useFetch } from './useFetch'
-import Follower from './Follower'
+import React, { useState, useEffect } from "react";
+import { useFetch } from "./useFetch";
+import Follower from "./Follower";
 function App() {
-  return <h2>pagination starter</h2>
+  const {loading} = useFetch()
+  return (
+    <main>
+      <div className="section-title">
+        <h1>{loading ? "loading..." : "pagination"}</h1>
+        <div className="underline"></div>
+      </div>
+    </main>
+  );
 }
 
-export default App
+export default App;
